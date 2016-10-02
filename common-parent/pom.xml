@@ -1,0 +1,194 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>cn.knet.common.parent</groupId>
+	<artifactId>common-parent</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<!-- 项目属性 -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.build.directory>target</project.build.directory>
+		<!-- jdk -->
+		<jdk.version>1.7</jdk.version>
+
+		<!-- maven -->
+		<maven-source-plugin.version>3.0.0</maven-source-plugin.version>
+		<maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
+		<maven-javadoc-plugin.version>2.10.3</maven-javadoc-plugin.version>
+
+		<!-- commons -->
+		<commons-lang3.version>3.4</commons-lang3.version>
+		<commons-lang.version>2.6</commons-lang.version>
+		<commons-codec.version>1.10</commons-codec.version>
+		<commons-configuration.version>1.10</commons-configuration.version>
+		<commons-beanutils.version>1.9.2</commons-beanutils.version>
+		<commons-io.version>2.5</commons-io.version>
+		<commons-fileupload.version>1.3.2</commons-fileupload.version>
+		<!-- logback -->
+		<logback-classic.version>1.1.7</logback-classic.version>
+
+		<!-- test -->
+		<testng.version>6.9.10</testng.version>
+		<hamcrest-core.version>1.3</hamcrest-core.version>
+		<junit.version>4.12</junit.version>
+
+		<!-- spring -->
+		<spring.version>4.2.6.RELEASE</spring.version>
+
+		<!-- javaee-api -->
+		<javaee-api.version>7.0</javaee-api.version>
+		<spring-modules-jakarta-commons.version>0.8a</spring-modules-jakarta-commons.version>
+		<dom4j.version>1.6.1</dom4j.version>
+		<aspectjweaver.version>1.8.9</aspectjweaver.version>
+		<cglib.version>3.2.2</cglib.version>
+
+
+		<!-- dbcp -->
+		<commons-dbcp.version>1.4</commons-dbcp.version>
+
+		<!-- mybatis -->
+		<mybatis.version>3.4.0</mybatis.version>
+		<mybatis-spring.version>1.3.0</mybatis-spring.version>
+
+		<!-- mysql -->
+		<mysql.version>5.1.9</mysql.version>
+
+		<!-- oracle -->
+		<oracle.version>14</oracle.version>
+
+
+		<!-- jsoup -->
+		<jsoup.version>1.9.2</jsoup.version>
+
+		<!-- http -->
+		<httpmime.version>4.5.2</httpmime.version>
+		<httpclient.version>4.5.2</httpclient.version>
+		<httpcore.version>4.4.4</httpcore.version>
+
+		<!-- servlet -->
+		<jstl.version>1.2</jstl.version>
+		<javax.servlet-api.version>3.1.0</javax.servlet-api.version>
+
+
+		<!-- UserAgentUtils -->
+		<UserAgentUtils.version>1.19</UserAgentUtils.version>
+		
+		<!-- redis -->
+		<jedis.version>2.9.0</jedis.version>
+		<spring-data-redis.version>1.7.2.RELEASE</spring-data-redis.version>
+		
+		
+		<!-- freemarker -->
+		<freemarker.version>2.3.23</freemarker.version>
+		
+		<!-- pdf -->
+		<flying-saucer-pdf.version>9.0.9</flying-saucer-pdf.version>
+		<flying-saucer-core.version>9.0.9</flying-saucer-core.version>
+		
+		<!-- pinyin -->
+		<jpinyin.version>1.1.7</jpinyin.version>
+		
+		<!-- quartz -->
+		<quartz.version>2.2.3</quartz.version>
+		
+		<!-- jpush极光推送 -->
+		<jpush.version>3.2.10</jpush.version>
+		
+		<!-- google -->
+		<zxing.version>3.2.1</zxing.version>
+		<gson.version>2.6.2</gson.version>
+		
+		<coobird.version>0.4.8</coobird.version>
+		
+	</properties>
+
+	<scm>
+		<developerConnection>scm:svn:http://scm.knet.cn/svn/kx/kx_finance/project/p2p_common/src/trunk/source/fs-common-base/</developerConnection>
+	</scm>
+	<distributionManagement>
+		<repository>
+			<id>ProjectReleases</id>
+			<name>Project Releases</name>
+			<url>http://repo.knet.cn/content/repositories/ProjectReleases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>ProjectSnapshots</id>
+			<name>Project Snapshots</name>
+			<url>http://repo.knet.cn/content/repositories/ProjectSnapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<!-- 所有子类都需要加载的jar包 -->
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${commons-lang3.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>${commons-codec.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-configuration</groupId>
+			<artifactId>commons-configuration</artifactId>
+			<version>${commons-configuration.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-lang</groupId>
+					<artifactId>commons-lang</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>${commons-beanutils.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+                <exclusion>
+                    <groupId>commons-collections</groupId>
+                    <artifactId>commons-collections</artifactId>
+                </exclusion>				
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback-classic.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>${testng.version}</version>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<artifactId>junit</artifactId>
+					<groupId>junit</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+
+	<!-- 该节点下的依赖关系只是为了统一版本号，不会被子项目自动继承， -->
+	<!-- 除非子项目主动引用，好处是子项目可以不用写版本号 -->
+	<dependencyManagement>
+		<dependencies>
+
+
+		</dependencies>
+	</dependencyManagement>
+
+
+</project>
