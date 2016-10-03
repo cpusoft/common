@@ -16,7 +16,7 @@ public class DnsUtilTest {
 
     @Test
     public void test() throws Exception{
-        String r = "202.173.11.141;2401:8d00:3:0::2;www.sina.com.cn;0::01;3.4.55.6";
+        String r = "1.1.1.1;2401:8d00:3:0::2;www.sina.com.cn;0::01;3.4.55.6";
         String rr = DnsUtil.getDnsTypes(r.split(";"));
         System.out.println(rr);
     }

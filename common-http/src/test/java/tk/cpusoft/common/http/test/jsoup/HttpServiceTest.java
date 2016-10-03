@@ -71,19 +71,18 @@ public class HttpServiceTest  extends AbstractSpringTestNGTest{
 
     @Test
     public void connectDns() throws IOException{
-        //curl -X POST https://202.173.9.72/auth_cmd -d "{\"resource_type\":\"token_gen_cmd\", \"attrs\":{\"grant_type\":\"password\",\"shaoqing\":\"test\",\"password\":\"tIoO8729\"}}"    --insecure
         Map m2 = new HashMap();
         m2.put("grant_type", "password");
-        m2.put("username", "shaoqing");
-        m2.put("password", "tIoO8729");
+        m2.put("username", "test");
+        m2.put("password", "12345");
 
         Map m = new HashMap();
         m.put("resource_type","token_gen_cmd");
         m.put("attrs", m2);
 
         HttpForm httpForm = HttpForm.gene().
-                setUrl("https://202.173.9.72/auth_cmd").
-                setReferrer("https://202.173.9.72").
+                setUrl("https://1.1.1.1/auth_cmd").
+                setReferrer("https://1.1.1.1").
                 setMethod(Method.POST).
                 setDataString(JsonUtil.Object2JsonString(m));
 

@@ -67,7 +67,7 @@ public class JsoupServiceTest extends AbstractSpringTestNGTest{
     public void loginTest(){
         String url = "http://192.168.249.51:5112/app-usr/login.shtml";
         Map dataMap = new HashMap();
-        dataMap.put("userName", "shaoqing@cpusoft.tk");
+        dataMap.put("userName", "test@cpusoft.tk");
         dataMap.put("password","11111111");
         String rr = jsoupService.simpleConnect(url, "", "UTF-8", true, dataMap,null);
         System.out.println(rr);
@@ -296,18 +296,17 @@ public class JsoupServiceTest extends AbstractSpringTestNGTest{
     }
     @Test
     public void connectDns(){
-    //curl -X POST https://202.173.9.72/auth_cmd -d "{\"resource_type\":\"token_gen_cmd\", \"attrs\":{\"grant_type\":\"password\",\"shaoqing\":\"test\",\"password\":\"tIoO8729\"}}"    --insecure
         Map m2 = new HashMap();
         m2.put("grant_type", "password");
-        m2.put("username", "shaoqing");
-        m2.put("password", "tIoO8729");
+        m2.put("username", "test");
+        m2.put("password", "123456");
         
         Map m = new HashMap();
         m.put("resource_type","token_gen_cmd");
         m.put("attrs", m2);
         
   
-        String r = jsoupService.simpleConnect("https://202.173.9.72/auth_cmd","https://202.173.9.72/auth_cmd","UTF-8",true,new HashMap(),
+        String r = jsoupService.simpleConnect("https://1.1.1.1/auth_cmd","https://1.1.1.1/auth_cmd","UTF-8",true,new HashMap(),
                 JsonUtil.Object2JsonString(m) );
         System.out.println(r);
         

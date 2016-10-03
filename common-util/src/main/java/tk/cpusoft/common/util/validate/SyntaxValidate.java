@@ -134,7 +134,7 @@ public class SyntaxValidate {
         }
         p = Pattern.compile(checkSameAlphabet);
         if( p.matcher(password).find()){
-            //  return "密码不能为同一字母"; //shaodebug
+            return "密码不能为同一字母"; 
         }
         return null;
     }
