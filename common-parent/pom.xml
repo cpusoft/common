@@ -104,21 +104,7 @@
 		
 	</properties>
 
-	<scm>
-		<developerConnection>scm:svn:http://scm.knet.cn/svn/kx/kx_finance/project/p2p_common/src/trunk/source/fs-common-base/</developerConnection>
-	</scm>
-	<distributionManagement>
-		<repository>
-			<id>ProjectReleases</id>
-			<name>Project Releases</name>
-			<url>http://repo.knet.cn/content/repositories/ProjectReleases/</url>
-		</repository>
-		<snapshotRepository>
-			<id>ProjectSnapshots</id>
-			<name>Project Snapshots</name>
-			<url>http://repo.knet.cn/content/repositories/ProjectSnapshots/</url>
-		</snapshotRepository>
-	</distributionManagement>
+
 
 	<!-- 所有子类都需要加载的jar包 -->
 	<dependencies>

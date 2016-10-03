@@ -23,18 +23,7 @@
     </properties>
     
 
-	<distributionManagement>
-		<repository>
-			<id>ProjectReleases</id>
-			<name>Project Releases</name>
-			<url>http://repo.knet.cn/content/repositories/ProjectReleases/</url>
-		</repository>
-		<snapshotRepository>
-			<id>ProjectSnapshots</id>
-			<name>Project Snapshots</name>
-			<url>http://repo.knet.cn/content/repositories/ProjectSnapshots/</url>
-		</snapshotRepository>
-	</distributionManagement>
+
 	<dependencies>
 		<dependency>
 		  <groupId>tk.cpusoft.common.base</groupId>
