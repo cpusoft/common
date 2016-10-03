@@ -191,8 +191,8 @@ public class JsoupServiceImpl implements JsoupService {
                 connect = lastCon.url(url);
             }
             connect = connect
-                    .userAgent(config.getString("fin.http.user.agent",DEFAULT_USER_AGENT))
-                    .timeout(config.getInt("fin.http.timeout.ms",DEFAULT_TIMEOUT))
+                    .userAgent(config.getString("common.http.user.agent",DEFAULT_USER_AGENT))
+                    .timeout(config.getInt("common.http.timeout.ms",DEFAULT_TIMEOUT))
                     .followRedirects(true)
                     .referrer(referrer)
                     .postDataCharset(postDataCharset)

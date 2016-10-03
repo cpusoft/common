@@ -74,7 +74,7 @@ public class MapServiceImpl implements MapService{
     @Override
     public  String queryLocationByBaidu(String lat, String lng ) {
         try {
-            String urlS = config.getString("fin.baidu.location.url");
+            String urlS = config.getString("common.http.baidu.location.url");
             String url = String.format(urlS,lat,lng);
             logger.info("queryLocationByBaidu():查询百度地址:"+url);
             String location = jsoupService.simpleConnect(url, "http://map.baidu.com", "UTF-8", false, new HashMap(),null);
@@ -145,7 +145,7 @@ public class MapServiceImpl implements MapService{
      * @return
      */
     public Map<String, String> gps2Baidu(String lat, String lng) {
-        String urlS = config.getString("fin.baidu.gps2baidu.url");
+        String urlS = config.getString("common.http.baidu.gps2baidu.url");
         String url = String.format(urlS,lat,lng);
         logger.info("gps2Baidu():gps转为百度地址:"+url);
         
