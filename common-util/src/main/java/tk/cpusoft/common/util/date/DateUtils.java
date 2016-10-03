@@ -9,11 +9,10 @@ import java.util.TimeZone;
 
 import org.apache.commons.lang3.StringUtils;
 
+
 /**
- * 日期工具类
- * @author <a href="mailto:wangxin@knet.cn">北京王欣</a>
- * @version 1.0, 2012-5-25 下午12:01:26
- * @since 1.0
+ * @desc：日期
+ * @date：2016年10月3日-上午9:53:26
  */
 public class DateUtils {
     /** 日期格式 */
@@ -487,12 +486,10 @@ public class DateUtils {
     }
 
     /**
-     * 
-     * 得到旬.
-     *
+     * @desc： 得到旬
+     * @date：2016年10月3日-上午9:53:43
      * @param input
-     * @return
-     * @author <a href="mailto:wangxin@knet.cn">北京王欣</a>
+     * @return String
      */
     public static String getCnDecade(Date input) {
         String day = formatDate(input);

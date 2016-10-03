@@ -13,13 +13,9 @@ import org.slf4j.LoggerFactory;
 import tk.cpusoft.common.util.validate.reglogin.RegLoginValidate;
 
 /**
- * 类说明.
- * 
- * @author <a href="mailto:os_wangxin@knet.cn">Wangxin</a>
- * @version 1.0, 2011-11-10 16:07:19
- * @since 1.0
+ * @desc：类转换
+ * @date：2016年10月3日-上午9:53:02
  */
-
 public class BeanToBean {
     /**
      * logback
@@ -31,7 +27,6 @@ public class BeanToBean {
 	 * @param obj
 	 * @param obj1
 	 * @throws Exception
-	 * @author <a href="mailto:zhaoxin@knet.cn">ZhaoXin</a>
 	 */
 	public void BTB(Object srcBean, Object destBean) {
 		BeanUtilsBean beanUtils = new BeanUtilsBean();

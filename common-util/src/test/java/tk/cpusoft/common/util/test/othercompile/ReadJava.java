@@ -43,7 +43,7 @@ public class ReadJava {
                     + " public void disply() {"  
                     + " System.out.println(\"Hello\");"  
                     + "}}";  
-            String filename = currentDir+"\\cn\\knet\\fin\\test\\TestCompiler.java";  
+            String filename = currentDir+"\\tk\\cpusoft\\test\\TestCompiler.java";  
             File file = new File(filename);  
             if(!file.exists()){
                 file.createNewFile();
