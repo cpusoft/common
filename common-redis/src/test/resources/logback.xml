@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+	<property name="log.base" value="logs/user" />
+	<property name="log.stdout" value="logs/stdout" />
+	
+
+    <!-- 线上输出控制台转存到文件，按日期滚动，避免catinla.out太大 -->
+ 	<appender name="stdout"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${log.stdout}.log</File>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${log.stdout}.%d{yyyy-MM-dd}.log</FileNamePattern>
+		</rollingPolicy>
+		<encoder>
+			<charset>UTF-8</charset>
+			<pattern>
+				%date [%thread] %-5level %logger{35} - %msg%n
+			</pattern>
+		</encoder>
+	</appender> 
+	
+	<appender name="console"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${log.stdout}.%d{yyyy-MM-dd}.log</FileNamePattern>
+		</rollingPolicy>
+		<encoder>
+			<charset>UTF-8</charset>
+			<pattern>
+				%date [%thread] %-5level %logger{35} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+	
+	
+
+
+	<logger name="tk.cpusoft" additivity="true">
+		<level value="DEBUG" />
+		<appender-ref ref="console" />
+	</logger>
+	
+	<root level="DEBUG">
+		<appender-ref ref="console" />
+	</root>
+</configuration>
